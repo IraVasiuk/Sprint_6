@@ -43,17 +43,20 @@ public class AlexLionTest {
 
     @Test //проверка, что метод getFriends() вызывает нужный список
     public void getFriendsListCheck() {
-        assertEquals(List.of("зебра Марти", "бегемотиха Глория", "жираф Мелман"), alexLionTest.getFriends());
+        List<String> actual = alexLionTest.getFriends();
+        assertEquals(List.of("зебра Марти", "бегемотиха Глория", "жираф Мелман"), actual);
     }
 
     @Test //проверка, что метод getPlaceOfLiving() вызывает нужный String
     public void testPlaceOfLiving() {
-        assertEquals("Нью-Йоркский зоопарк", alexLionTest.getPlaceOfLiving());
+        String actual = alexLionTest.getPlaceOfLiving();
+        assertEquals("Нью-Йоркский зоопарк", actual);
     }
 
     @Test //проверка, что у Алекса нет детей
     public void testGetKittens() {
-        assertEquals(0, alexLionTest.getKittens());
+        int actual = alexLionTest.getKittens();
+        assertEquals(0, actual);
     }
 
 }

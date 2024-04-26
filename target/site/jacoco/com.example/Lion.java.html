@@ -6,7 +6,7 @@ public class Lion {
 
     boolean hasMane;
     //инъекция зависмости через интерфейс Predator
-    Feline feline;
+    private final Feline feline;
 
 <span class="fc" id="L11">    public Lion(String sex, Feline feline) throws Exception {</span>
 <span class="fc" id="L12">        this.feline = feline;</span>

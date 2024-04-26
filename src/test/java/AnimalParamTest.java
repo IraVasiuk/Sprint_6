@@ -32,21 +32,24 @@ public class AnimalParamTest {
         animal = new Animal();
     }
 
-    @Test //тест ловит недействительный пол
-    public void getFoodParameterized() {
-        try {
-            List<String> actualList = animal.getFood(animalKind);
-            Assert.assertEquals(expectedList, actualList);
-        } catch (Exception exception) {
-            System.out.println(exception.getMessage());
-        }
-    }
+    // В параметризованном тесте оставляем только позитивные сценарии, без try/catch и прочих обработчиков
+    // отдельным тестом в отдельном классе проверяем исключительную ситуацию
+    // И делать это нужно с помощью метода assertThrows. Реализовано в AnimalExceptionTest
+
+//    @Test //тест ловит недействительный пол
+//    public void getFoodParameterized() {
+//        try {
+//         List<String> actualList = animal.getFood(animalKind);
+//         Assert.assertEquals(expectedList, actualList);
+//        } catch (Exception exception) {
+//            System.out.println(exception.getMessage());
+//        }
+//    }
 
     @Test //тест метода getFamily(), что он выводит нужный String
     public void getFamilyReturnsLongString() {
         String actual = animal.getFamily();
         String expected = "Существует несколько семейств: заячьи, беличьи, мышиные, кошачьи, псовые, медвежьи, куньи";
         Assert.assertEquals(expected, actual);
-
     }
 }
